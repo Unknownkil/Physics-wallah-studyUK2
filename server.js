@@ -1,6 +1,6 @@
 const express = require('express');
 const axios = require('axios');
-const cors = require('cors'); // Importing the CORS package
+const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
@@ -59,37 +59,33 @@ app.get('/batches/:batchId/subject/:subjectId/topics', async (req, res) => {
 });
 
 // Route for DPP Videos
-app.get('/batches/:batchId/subject/:subjectId/contents/dpp-videos', async (req, res) => {
-    const { batchId, subjectId } = req.params;
-    const contentId = req.query.content_id;
-    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents?page=1&tag=${contentId}&contentType=DppVideos`;
+app.get('/batches/:batchId/subject/:subjectId/contents/:contentId/dpp-videos', async (req, res) => {
+    const { batchId, subjectId, contentId } = req.params;
+    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents/${contentId}?page=1&contentType=DppVideos`;
     const data = await makeRequest(url, req.token);
     res.json(data);
 });
 
 // Route for DPP Notes
-app.get('/batches/:batchId/subject/:subjectId/contents/dpp-notes', async (req, res) => {
-    const { batchId, subjectId } = req.params;
-    const contentId = req.query.content_id;
-    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents?page=1&tag=${contentId}&contentType=DppNotes`;
+app.get('/batches/:batchId/subject/:subjectId/contents/:contentId/dpp-notes', async (req, res) => {
+    const { batchId, subjectId, contentId } = req.params;
+    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents/${contentId}?page=1&contentType=DppNotes`;
     const data = await makeRequest(url, req.token);
     res.json(data);
 });
 
 // Route for Notes
-app.get('/batches/:batchId/subject/:subjectId/contents/notes', async (req, res) => {
-    const { batchId, subjectId } = req.params;
-    const contentId = req.query.content_id;
-    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents?page=1&tag=${contentId}&contentType=notes`;
+app.get('/batches/:batchId/subject/:subjectId/contents/:contentId/notes', async (req, res) => {
+    const { batchId, subjectId, contentId } = req.params;
+    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents/${contentId}?page=1&contentType=notes`;
     const data = await makeRequest(url, req.token);
     res.json(data);
 });
 
 // Route for Videos
-app.get('/batches/:batchId/subject/:subjectId/contents/videos', async (req, res) => {
-    const { batchId, subjectId } = req.params;
-    const contentId = req.query.content_id;
-    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents?page=1&tag=${contentId}&contentType=videos`;
+app.get('/batches/:batchId/subject/:subjectId/contents/:contentId/videos', async (req, res) => {
+    const { batchId, subjectId, contentId } = req.params;
+    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents/${contentId}?page=1&contentType=videos`;
     const data = await makeRequest(url, req.token);
     res.json(data);
 });
