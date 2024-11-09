@@ -61,7 +61,7 @@ app.get('/batches/:batchId/subject/:subjectId/topics', async (req, res) => {
 // Route for DPP Videos
 app.get('/batches/:batchId/subject/:subjectId/contents/:contentId/dpp-videos', async (req, res) => {
     const { batchId, subjectId, contentId } = req.params;
-    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents/${contentId}?page=1&contentType=DppVideos`;
+    const url = https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents?page=1&tag=${contentId}&contentType=DppVideos;
     const data = await makeRequest(url, req.token);
     res.json(data);
 });
@@ -69,7 +69,7 @@ app.get('/batches/:batchId/subject/:subjectId/contents/:contentId/dpp-videos', a
 // Route for DPP Notes
 app.get('/batches/:batchId/subject/:subjectId/contents/:contentId/dpp-notes', async (req, res) => {
     const { batchId, subjectId, contentId } = req.params;
-    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents/${contentId}?page=1&contentType=DppNotes`;
+    const url = https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents?page=1&tag=${contentId}&contentType=DppNotes;
     const data = await makeRequest(url, req.token);
     res.json(data);
 });
@@ -77,7 +77,7 @@ app.get('/batches/:batchId/subject/:subjectId/contents/:contentId/dpp-notes', as
 // Route for Notes
 app.get('/batches/:batchId/subject/:subjectId/contents/:contentId/notes', async (req, res) => {
     const { batchId, subjectId, contentId } = req.params;
-    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents/${contentId}?page=1&contentType=notes`;
+    const url = https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents?page=1&tag=${contentId}&contentType=notes;
     const data = await makeRequest(url, req.token);
     res.json(data);
 });
@@ -85,7 +85,7 @@ app.get('/batches/:batchId/subject/:subjectId/contents/:contentId/notes', async 
 // Route for Videos
 app.get('/batches/:batchId/subject/:subjectId/contents/:contentId/videos', async (req, res) => {
     const { batchId, subjectId, contentId } = req.params;
-    const url = `https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents/${contentId}?page=1&contentType=videos`;
+    const url = https://api.penpencil.co/v2/batches/${batchId}/subject/${subjectId}/contents?page=1&tag=${contentId}&contentType=videos;
     const data = await makeRequest(url, req.token);
     res.json(data);
 });
